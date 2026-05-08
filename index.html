@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BUMI — Building Maintenance Integrated</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!--  LOGIN PAGE                                     -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <div id="page-login" class="page active">
+    <div class="login-bg">
+      <div class="login-blob blob-1"></div>
+      <div class="login-blob blob-2"></div>
+      <div class="login-blob blob-3"></div>
+    </div>
+    <div class="login-wrapper">
+      <div class="login-card glass-card">
+        <!-- Logo -->
+        <div class="login-logo">
+          <div class="logo-icon">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Globe base -->
+              <circle cx="28" cy="30" r="18" fill="url(#globeGrad)" opacity="0.15"/>
+              <circle cx="28" cy="30" r="18" stroke="url(#globeStroke)" stroke-width="2" fill="none"/>
+              <!-- Latitude lines -->
+              <ellipse cx="28" cy="30" rx="9" ry="18" stroke="url(#globeStroke)" stroke-width="1.2" fill="none" opacity="0.5"/>
+              <line x1="10" y1="30" x2="46" y2="30" stroke="url(#globeStroke)" stroke-width="1.2" opacity="0.5"/>
+              <line x1="13" y1="22" x2="43" y2="22" stroke="url(#globeStroke)" stroke-width="1" opacity="0.4"/>
+              <line x1="13" y1="38" x2="43" y2="38" stroke="url(#globeStroke)" stroke-width="1" opacity="0.4"/>
+              <!-- Factory building -->
+              <rect x="34" y="34" width="22" height="18" rx="2" fill="url(#factoryGrad)"/>
+              <rect x="37" y="28" width="5" height="8" rx="1" fill="url(#factoryGrad)"/>
+              <rect x="44" y="30" width="5" height="6" rx="1" fill="url(#factoryGrad)"/>
+              <rect x="50" y="32" width="4" height="4" rx="1" fill="url(#factoryGrad)"/>
+              <!-- Factory windows -->
+              <rect x="37" y="37" width="4" height="4" rx="0.5" fill="white" opacity="0.6"/>
+              <rect x="43" y="37" width="4" height="4" rx="0.5" fill="white" opacity="0.6"/>
+              <rect x="49" y="37" width="4" height="4" rx="0.5" fill="white" opacity="0.6"/>
+              <!-- Door -->
+              <rect x="42" y="43" width="5" height="9" rx="0.5" fill="white" opacity="0.5"/>
+              <!-- Smoke -->
+              <circle cx="39" cy="25" r="2.5" fill="url(#smokeGrad)" opacity="0.6"/>
+              <circle cx="46" cy="26" r="2" fill="url(#smokeGrad)" opacity="0.45"/>
+              <circle cx="52" cy="28" r="1.5" fill="url(#smokeGrad)" opacity="0.35"/>
+              <defs>
+                <linearGradient id="globeGrad" x1="10" y1="12" x2="46" y2="48">
+                  <stop offset="0%" stop-color="#60A5FA"/>
+                  <stop offset="100%" stop-color="#3B82F6"/>
+                </linearGradient>
+                <linearGradient id="globeStroke" x1="10" y1="12" x2="46" y2="48">
+                  <stop offset="0%" stop-color="#60A5FA"/>
+                  <stop offset="100%" stop-color="#2563EB"/>
+                </linearGradient>
+                <linearGradient id="factoryGrad" x1="34" y1="28" x2="56" y2="52">
+                  <stop offset="0%" stop-color="#3B82F6"/>
+                  <stop offset="100%" stop-color="#1D4ED8"/>
+                </linearGradient>
+                <linearGradient id="smokeGrad" x1="38" y1="24" x2="54" y2="29">
+                  <stop offset="0%" stop-color="#BAE6FD"/>
+                  <stop offset="100%" stop-color="#93C5FD"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <div class="logo-text">
+            <span class="logo-name">BUMI</span>
+            <span class="logo-sub">Building Maintenance Integrated</span>
+          </div>
+        </div>
+
+        <div class="login-divider"></div>
+
+        <h2 class="login-title">Selamat Datang</h2>
+        <p class="login-desc">Masuk untuk mengakses sistem monitoring & maintenance</p>
+
+        <form id="login-form" autocomplete="off">
+          <div class="form-group">
+            <label class="form-label" for="nik">NIK Karyawan</label>
+            <div class="input-wrapper">
+              <span class="input-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M8 8V6a4 4 0 018 0v2"/><circle cx="12" cy="14" r="1.5"/></svg>
+              </span>
+              <input type="text" id="nik" class="form-input" placeholder="Masukkan NIK Anda" maxlength="10" />
+            </div>
+            <span class="field-error" id="nik-error"></span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="password">Password</label>
+            <div class="input-wrapper">
+              <span class="input-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+              </span>
+              <input type="password" id="password" class="form-input" placeholder="Masukkan password" />
+              <button type="button" class="toggle-pass" id="toggle-pass" tabindex="-1">
+                <svg id="eye-open" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                <svg id="eye-closed" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><path d="M17.94 17.94A10.07 10.07 0 0112 20c-7 0-11-8-11-8a18.45 18.45 0 015.06-5.94M9.9 4.24A9.12 9.12 0 0112 4c7 0 11 8 11 8a18.5 18.5 0 01-2.16 3.19m-6.72-1.07a3 3 0 11-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+              </button>
+            </div>
+            <span class="field-error" id="pass-error"></span>
+          </div>
+
+          <span class="field-error" id="login-error" style="display:block;text-align:center;margin-bottom:8px;"></span>
+
+          <button type="submit" class="btn-primary btn-full" id="login-btn">
+            <span class="btn-text">Masuk</span>
+            <span class="btn-loader" style="display:none">
+              <span class="spinner"></span>
+            </span>
+          </button>
+        </form>
+
+        <p class="login-footer">BUMI v1.0 &copy; 2025 — PT. Industri Nusantara</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!--  DASHBOARD / APP SHELL                          -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <div id="page-app" class="page">
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">
+          <div class="logo-icon logo-icon-sm">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="28" cy="30" r="18" stroke="url(#sGlobeStroke)" stroke-width="2" fill="none"/>
+              <ellipse cx="28" cy="30" rx="9" ry="18" stroke="url(#sGlobeStroke)" stroke-width="1.2" fill="none" opacity="0.5"/>
+              <line x1="10" y1="30" x2="46" y2="30" stroke="url(#sGlobeStroke)" stroke-width="1.2" opacity="0.5"/>
+              <rect x="34" y="34" width="22" height="18" rx="2" fill="url(#sFactoryGrad)"/>
+              <rect x="37" y="28" width="5" height="8" rx="1" fill="url(#sFactoryGrad)"/>
+              <rect x="44" y="30" width="5" height="6" rx="1" fill="url(#sFactoryGrad)"/>
+              <rect x="37" y="37" width="4" height="4" rx="0.5" fill="white" opacity="0.6"/>
+              <rect x="43" y="37" width="4" height="4" rx="0.5" fill="white" opacity="0.6"/>
+              <rect x="42" y="43" width="5" height="9" rx="0.5" fill="white" opacity="0.5"/>
+              <defs>
+                <linearGradient id="sGlobeStroke" x1="10" y1="12" x2="46" y2="48"><stop offset="0%" stop-color="#60A5FA"/><stop offset="100%" stop-color="#2563EB"/></linearGradient>
+                <linearGradient id="sFactoryGrad" x1="34" y1="28" x2="56" y2="52"><stop offset="0%" stop-color="#3B82F6"/><stop offset="100%" stop-color="#1D4ED8"/></linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <div>
+            <span class="sidebar-brand">BUMI</span>
+            <span class="sidebar-brand-sub">Maintenance Integrated</span>
+          </div>
+        </div>
+        <button class="sidebar-close" id="sidebar-close">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+
+      <div class="sidebar-user">
+        <div class="user-avatar" id="sidebar-avatar">S</div>
+        <div class="user-info">
+          <span class="user-name" id="sidebar-name">Saepul</span>
+          <span class="user-role" id="sidebar-role">Teknisi IPAL</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <span class="nav-section-label">Menu Utama</span>
+        <a href="#" class="nav-item" id="nav-ipal" data-target="ipal">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          <span>Monitoring IPAL</span>
+        </a>
+        <a href="#" class="nav-item" id="nav-ac" data-target="ac">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="10" rx="3"/><path d="M6 21V7M18 21V7M12 21V7"/></svg>
+          <span>Maintenance AC</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <button class="btn-logout" id="logout-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+          <span>Keluar</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <!-- Main content -->
+    <main class="main-content" id="main-content">
+
+      <!-- Topbar -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="menu-toggle" id="menu-toggle">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+          <div>
+            <h1 class="topbar-title" id="topbar-title">Monitoring IPAL</h1>
+            <p class="topbar-sub" id="topbar-sub">Form Input Data Real-Time</p>
+          </div>
+        </div>
+        <div class="topbar-right">
+          <div class="topbar-time" id="topbar-time">--:--:--</div>
+          <button class="theme-toggle" id="theme-toggle" title="Ganti tema">
+            <svg id="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            <svg id="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+          </button>
+          <div class="topbar-user">
+            <div class="user-avatar user-avatar-sm" id="topbar-avatar">S</div>
+            <span class="topbar-username" id="topbar-name">Saepul</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Welcome Card -->
+      <div class="content-body">
+        <div class="welcome-card glass-card" id="welcome-card">
+          <div class="welcome-text">
+            <p class="welcome-greeting" id="welcome-greeting">Selamat pagi,</p>
+            <h2 class="welcome-name" id="welcome-name">Saepul 👋</h2>
+            <p class="welcome-desc" id="welcome-desc">Anda login sebagai <strong>Teknisi IPAL</strong>. Silakan isi formulir monitoring di bawah ini.</p>
+          </div>
+          <div class="welcome-badge" id="welcome-badge">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+        </div>
+
+        <!-- ═══════════════════════ IPAL FORM ═══════════════════════ -->
+        <section id="section-ipal" class="form-section active-section">
+          <form id="form-ipal" novalidate>
+
+            <!-- Info Monitoring -->
+            <div class="form-card glass-card">
+              <div class="card-header">
+                <div class="card-icon card-icon-blue">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                </div>
+                <div>
+                  <h3 class="card-title">Informasi Monitoring</h3>
+                  <p class="card-subtitle">Tanggal, waktu, dan timestamp otomatis</p>
+                </div>
+              </div>
+              <div class="form-grid form-grid-3">
+                <div class="form-group">
+                  <label class="form-label required">Tanggal Monitoring</label>
+                  <input type="date" id="ipal-tanggal" class="form-input" required />
+                  <span class="field-error" id="err-ipal-tanggal"></span>
+                </div>
+                <div class="form-group">
+                  <label class="form-label required">Waktu Monitoring</label>
+                  <input type="time" id="ipal-waktu" class="form-input" step="1" required />
+                  <span class="field-error" id="err-ipal-waktu"></span>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Timestamp Sistem</label>
+                  <input type="text" id="ipal-timestamp" class="form-input input-readonly" readonly />
+                </div>
+              </div>
+            </div>
+
+            <!-- A. Data Inlet -->
+            <div class="form-card glass-card">
+              <div class="card-header">
+                <div class="card-icon card-icon-sky">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M5 12l4-4M5 12l4 4"/></svg>
+                </div>
+                <div>
+                  <h3 class="card-title">A. Data Inlet</h3>
+                  <p class="card-subtitle">Nilai dan debit aliran inlet</p>
+                </div>
+              </div>
+              <div class="form-grid form-grid-2">
+                <div class="form-group">
+                  <label class="form-label required">Nilai Flowmeter Inlet</label>
+                  <div class="input-wrapper">
+                    <input type="number" id="ipal-inlet-flow" class="form-input" placeholder="0.00" step="0.01" required />
+                  </div>
+                  <span class="field-error" id="err-ipal-inlet-flow"></span>
+                </div>
+                <div class="form-group">
+                  <label class="form-label required">Debit Aliran Inlet (m³)</label>
+                  <div class="input-wrapper">
+                    <input type="number" id="ipal-inlet-debit" class="form-input" placeholder="0.00" step="0.01" required />
+                    <span class="input-suffix">m³</span>
+                  </div>
+                  <span class="field-error" id="err-ipal-inlet-debit"></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- B. Data Outlet -->
+            <div class="form-card glass-card">
+              <div class="card-header">
+                <div class="card-icon card-icon-teal">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M19 12l-4 4M19 12l-4-4"/></svg>
+                </div>
+                <div>
+                  <h3 class="card-title">B. Data Outlet</h3>
+                  <p class="card-subtitle">Nilai dan debit aliran outlet</p>
+                </div>
+              </div>
+              <div class="form-grid form-grid-2">
+                <div class="form-group">
+                  <label class="form-label required">Nilai Flowmeter Outlet</label>
+                  <input type="number" id="ipal-outlet-flow" class="form-input" placeholder="0.00" step="0.01" required />
+                  <span class="field-error" id="err-ipal-outlet-flow"></span>
+                </div>
+                <div class="form-group">
+                  <label class="form-label required">Debit Aliran Outlet (m³)</label>
+                  <div class="input-wrapper">
+                    <input type="number" id="ipal-outlet-debit" class="form-input" placeholder="0.00" step="0.01" required />
+                    <span class="input-suffix">m³</span>
+                  </div>
+                  <span class="field-error" id="err-ipal-outlet-debit"></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- C. Data RAS -->
+            <div class="form-card glass-card">
+              <div class="card-header">
+                <div class="card-icon card-icon-indigo">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 11-2.12-9.36L23 10"/></svg>
+                </div>
+                <div>
+                  <h3 class="card-title">C. Data RAS</h3>
+                  <p class="card-subtitle">Return Activated Sludge</p>
+                </div>
+              </div>
+              <div class="form-grid form-grid-2">
+                <div class="form-group">
+                  <label class="form-label required">Nilai Flowmeter RAS</label>
+                  <input type="number" id="ipal-ras-flow" class="form-input" placeholder="0.00" step="0.01" required />
+                  <span class="field-error" id="err-ipal-ras-flow"></span>
+                </div>
+                <div class="form-group">
+                  <label class="form-label required">Debit Aliran RAS (m³)</label>
+                  <div class="input-wrapper">
+                    <input type="number" id="ipal-ras-debit" class="form-input" placeholder="0.00" step="0.01" required />
+                    <span class="input-suffix">m³</span>
+                  </div>
+                  <span class="field-error" id="err-ipal-ras-debit"></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- D. Data Recycle -->
+            <div class="form-card glass-card">
+              <div class="card-header">
+                <div class="card-icon card-icon-blue">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 4v6h6"/><path d="M3.51 9a9 9 0 105.06-3.55"/></svg>
+                </div>
+                <div>
+                  <h3 class="card-title">D. Data Recycle</h3>
+                  <p class="card-subtitle">Aliran recycle</p>
+                </div>
+              </div>
+              <div class="form-grid form-grid-2">
+                <div class="form-group">
+                  <label class="form-label required">Nilai Flowmeter Recycle</label>
+                  <input type="number" id="ipal-rec-flow" class="form-input" placeholder="0.00" step="0.01" required />
+                  <span class="field-error" id="err-ipal-rec-flow"></span>
+                </div>
+                <div class="form-group">
+                  <label class="form-label required">Debit Aliran Recycle (m³)</label>
+                  <div class="input-wrapper">
+                    <input type="number" id="ipal-rec-debit" class="form-input" placeholder="0.00" step="0.01" required />
+                    <span class="input-suffix">m³</span>
+                  </div>
+                  <span class="field-error" id="err-ipal-rec-debit"></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- E. Parameter Air Limbah -->
+            <div class="form-card glass-card">
+              <div class="card-header">
+                <div class="card-icon card-icon-sky">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                </div>
+                <div>
+                  <h3 class="card-title">E. Parameter Air Limbah</h3>
+                  <p class="card-subtitle">pH, suhu, dan SVI30 setiap zona</p>
+                </div>
+              </div>
+
+              <!-- Ekualisasi 2 -->
+              <div class="param-section">
+                <div class="param-label">Ekualisasi 2</div>
+                <div class="form-grid form-grid-2">
+                  <div class="form-group">
+                    <label class="form-label required">Nilai pH Ekualisasi 2</label>
+                    <input type="number" id="ipal-eq2-ph" class="form-input" placeholder="7.0" step="0.1" min="0" max="14" required />
+                    <span class="field-error" id="err-ipal-eq2-ph"></span>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label required">Suhu Ekualisasi 2 (°C)</label>
+                    <div class="input-wrapper">
+                      <input type="number" id="ipal-eq2-suhu" class="form-input" placeholder="25.0" step="0.1" required />
+                      <span class="input-suffix">°C</span>
+                    </div>
+                    <span class="field-error" id="err-ipal-eq2-suhu"></span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Anaerob -->
+              <div class="param-section">
+                <div class="param-label">Anaerob</div>
+                <div class="form-grid form-grid-2">
+                  <div class="form-group">
+                    <label class="form-label required">Nilai pH Anaerob</label>
+                    <input type="number" id="ipal-an-ph" class="form-input" placeholder="7.0" step="0.1" min="0" max="14" required />
+                    <span class="field-error" id="err-ipal-an-ph"></span>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label required">Suhu Anaerob (°C)</label>
+                    <div class="input-wrapper">
+                      <input type="number" id="ipal-an-suhu" class="form-input" placeholder="25.0" step="0.1" required />
+                      <span class="input-suffix">°C</span>
+                    </div>
+                    <span class="field-error" id="err-ipal-an-suhu"></span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Aerasi 1 -->
+              <div class="param-section">
+                <div class="param-label">Aerasi 1</div>
+                <div class="form-grid form-grid-2">
+                  <div class="form-group">
+                    <label class="form-label required">Nilai pH Aerasi 1</label>
+                    <input type="number" id="ipal-ae1-ph" class="form-input" placeholder="7.0" step="0.1" min="0" max="14" required />
+                    <span class="field-error" id="err-ipal-ae1-ph"></span>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label required">Nilai SVI30 Aerasi 1</label>
+                    <input type="number" id="ipal-ae1-svi" class="form-input" placeholder="0" step="1" required />
+                    <span class="field-error" id="err-ipal-ae1-svi"></span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Aerasi 2 -->
+              <div class="param-section">
+                <div class="param-label">Aerasi 2</div>
+                <div class="form-grid form-grid-2">
+                  <div class="form-group">
+                    <label class="form-label required">Nilai pH Aerasi 2</label>
+                    <input type="number" id="ipal-ae2-ph" class="form-input" placeholder="7.0" step="0.1" min="0" max="14" required />
+                    <span class="field-error" id="err-ipal-ae2-ph"></span>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label required">Nilai SVI30 Aerasi 2</label>
+                    <input type="number" id="ipal-ae2-svi" class="form-input" placeholder="0" step="1" required />
+                    <span class="field-error" id="err-ipal-ae2-svi"></span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Aerasi 4 -->
+              <div class="param-section">
+                <div class="param-label">Aerasi 4</div>
+                <div class="form-grid form-grid-2">
+                  <div class="form-group">
+                    <label class="form-label required">Nilai pH Aerasi 4</label>
+                    <input type="number" id="ipal-ae4-ph" class="form-input" placeholder="7.0" step="0.1" min="0" max="14" required />
+                    <span class="field-error" id="err-ipal-ae4-ph"></span>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label required">Nilai SVI30 Aerasi 4</label>
+                    <input type="number" id="ipal-ae4-svi" class="form-input" placeholder="0" step="1" required />
+                    <span class="field-error" id="err-ipal-ae4-svi"></span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Outlet -->
+              <div class="param-section">
+                <div class="param-label">Outlet</div>
+                <div class="form-grid form-grid-2">
+                  <div class="form-group">
+                    <label class="form-label required">Nilai pH Outlet</label>
+                    <input type="number" id="ipal-out-ph" class="form-input" placeholder="7.0" step="0.1" min="0" max="14" required />
+                    <span class="field-error" id="err-ipal-out-ph"></span>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label required">Suhu Outlet (°C)</label>
+                    <div class="input-wrapper">
+                      <input type="number" id="ipal-out-suhu" class="form-input" placeholder="25.0" step="0.1" required />
+                      <span class="input-suffix">°C</span>
+                    </div>
+                    <span class="field-error" id="err-ipal-out-suhu"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tambahan -->
+            <div class="form-card glass-card">
+              <div class="card-header">
+                <div class="card-icon card-icon-indigo">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                </div>
+                <div>
+                  <h3 class="card-title">Tambahan & Dokumentasi</h3>
+                  <p class="card-subtitle">Foto SVI30 dan kondisi IPAL</p>
+                </div>
+              </div>
+              <div class="form-grid form-grid-1">
+                <div class="form-group">
+                  <label class="form-label">Upload Foto SVI30 <span class="badge-optional">Opsional</span></label>
+                  <div class="upload-area" id="ipal-svi-upload-area">
+                    <input type="file" id="ipal-svi-foto" accept="image/*" class="upload-input" />
+                    <div class="upload-placeholder">
+                      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                      <p>Klik atau seret foto SVI30 ke sini</p>
+                      <span>PNG, JPG, JPEG — Maks. 5MB</span>
+                    </div>
+                    <div class="upload-preview" id="ipal-svi-preview" style="display:none">
+                      <img id="ipal-svi-img" src="" alt="Preview SVI30" />
+                      <button type="button" class="upload-remove" id="ipal-svi-remove">✕ Hapus</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label required">Deskripsi Gangguan / Kondisi IPAL</label>
+                  <textarea id="ipal-deskripsi" class="form-textarea" rows="4" placeholder="Tuliskan kondisi IPAL, gangguan yang terjadi, atau catatan penting lainnya..." required></textarea>
+                  <span class="field-error" id="err-ipal-deskripsi"></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Submit -->
+            <div class="form-actions">
+              <button type="button" class="btn-secondary" id="ipal-reset-btn">Reset Form</button>
+              <button type="submit" class="btn-primary" id="ipal-submit-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2L15 22l-4-9-9-4 20-7z"/></svg>
+                <span class="btn-text">Kirim Data Monitoring</span>
+                <span class="btn-loader" style="display:none"><span class="spinner"></span></span>
+              </button>
+            </div>
+
+          </form>
+        </section>
+
+        <!-- ═══════════════════════ AC FORM ═══════════════════════ -->
+        <section id="section-ac" class="form-section">
+          <form id="form-ac" novalidate>
+
+            <!-- Info Pelaporan -->
+            <div class="form-card glass-card">
+              <div class="card-header">
+                <div class="card-icon card-icon-blue">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                </div>
+                <div>
+                  <h3 class="card-title">Informasi Pelaporan</h3>
+                  <p class="card-subtitle">Tanggal, waktu, dan timestamp otomatis</p>
+                </div>
+              </div>
+              <div class="form-grid form-grid-3">
+                <div class="form-group">
+                  <label class="form-label required">Tanggal Pelaporan</label>
+                  <input type="date" id="ac-tanggal" class="form-input" required />
+                  <span class="field-error" id="err-ac-tanggal"></span>
+                </div>
+                <div class="form-group">
+                  <label class="form-label required">Waktu Pelaporan</label>
+                  <input type="time" id="ac-waktu" class="form-input" step="1" required />
+                  <span class="field-error" id="err-ac-waktu"></span>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Timestamp Sistem</label>
+                  <input type="text" id="ac-timestamp" class="form-input input-readonly" readonly />
+                </div>
+              </div>
+            </div>
+
+            <!-- Informasi Unit AC -->
+            <div class="form-card glass-card">
+              <div class="card-header">
+                <div class="card-icon card-icon-teal">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="10" rx="3"/><path d="M6 21V7M18 21V7M12 21V7"/></svg>
+                </div>
+                <div>
+                  <h3 class="card-title">Informasi Unit AC</h3>
+                  <p class="card-subtitle">Pilih unit AC yang dilaporkan</p>
+                </div>
+              </div>
+              <div class="form-grid form-grid-1">
+                <div class="form-group">
+                  <label class="form-label required">Unit AC</label>
+                  <div class="select-wrapper">
+                    <select id="ac-unit" class="form-select" required>
+                      <option value="">— Pilih Unit AC —</option>
+                    </select>
+                    <svg class="select-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                  </div>
+                  <span class="field-error" id="err-ac-unit"></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Detail Gangguan -->
+            <div class="form-card glass-card">
+              <div class="card-header">
+                <div class="card-icon card-icon-indigo">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                </div>
+                <div>
+                  <h3 class="card-title">Detail Gangguan</h3>
+                  <p class="card-subtitle">Jenis gangguan dan dokumentasi</p>
+                </div>
+              </div>
+              <div class="form-grid form-grid-2">
+                <div class="form-group">
+                  <label class="form-label required">Jenis Gangguan</label>
+                  <div class="select-wrapper">
+                    <select id="ac-gangguan" class="form-select" required>
+                      <option value="">— Pilih Jenis Gangguan —</option>
+                      <option>AC Tidak Dingin</option>
+                      <option>AC Bocor</option>
+                      <option>AC Mati Total</option>
+                      <option>AC Berisik</option>
+                      <option>Remote Tidak Berfungsi</option>
+                      <option>AC Mengeluarkan Bau</option>
+                      <option>Indikator Berkedip</option>
+                      <option>Listrik Trip</option>
+                      <option>Lainnya</option>
+                    </select>
+                    <svg class="select-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                  </div>
+                  <span class="field-error" id="err-ac-gangguan"></span>
+                </div>
+                <div class="form-group">
+                  <label class="form-label required">Waktu Mulai Kerusakan</label>
+                  <input type="datetime-local" id="ac-waktu-rusak" class="form-input" required />
+                  <span class="field-error" id="err-ac-waktu-rusak"></span>
+                </div>
+              </div>
+              <div class="form-grid form-grid-1">
+                <div class="form-group">
+                  <label class="form-label required">Upload Dokumentasi Kerusakan</label>
+                  <div class="upload-area" id="ac-rusak-upload-area">
+                    <input type="file" id="ac-foto-rusak" accept="image/*" class="upload-input" required />
+                    <div class="upload-placeholder">
+                      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                      <p>Klik atau seret foto kondisi kerusakan</p>
+                      <span>PNG, JPG, JPEG — Maks. 5MB</span>
+                    </div>
+                    <div class="upload-preview" id="ac-rusak-preview" style="display:none">
+                      <img id="ac-rusak-img" src="" alt="Preview Kerusakan" />
+                      <button type="button" class="upload-remove" id="ac-rusak-remove">✕ Hapus</button>
+                    </div>
+                  </div>
+                  <span class="field-error" id="err-ac-foto-rusak"></span>
+                </div>
+                <div class="form-group">
+                  <label class="form-label required">Deskripsi Penyebab / Gejala Kerusakan</label>
+                  <textarea id="ac-deskripsi-rusak" class="form-textarea" rows="3" placeholder="Jelaskan gejala dan penyebab kerusakan secara detail..." required></textarea>
+                  <span class="field-error" id="err-ac-deskripsi-rusak"></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tindakan Perbaikan -->
+            <div class="form-card glass-card">
+              <div class="card-header">
+                <div class="card-icon card-icon-sky">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+                </div>
+                <div>
+                  <h3 class="card-title">Tindakan Perbaikan</h3>
+                  <p class="card-subtitle">Langkah dan hasil perbaikan</p>
+                </div>
+              </div>
+              <div class="form-grid form-grid-1">
+                <div class="form-group">
+                  <label class="form-label required">Tindakan Perbaikan</label>
+                  <div class="select-wrapper">
+                    <select id="ac-tindakan" class="form-select" required>
+                      <option value="">— Pilih Tindakan Perbaikan —</option>
+                      <option>Pengisian Freon dan Pembersihan Evaporator</option>
+                      <option>Pembersihan Saluran Drainase AC</option>
+                      <option>Perbaikan Sistem Kelistrikan atau Penggantian Fuse</option>
+                      <option>Pengencangan Baut dan Pemeriksaan Kipas Blower</option>
+                      <option>Penggantian Baterai atau Remote AC</option>
+                      <option>Pencucian AC dan Pembersihan Filter Udara</option>
+                      <option>Reset Sistem dan Pemeriksaan Kode Error</option>
+                      <option>Perbaikan Korsleting atau Pemeriksaan Kompresor</option>
+                      <option>Lainnya</option>
+                    </select>
+                    <svg class="select-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                  </div>
+                  <span class="field-error" id="err-ac-tindakan"></span>
+                </div>
+                <div class="form-group">
+                  <label class="form-label required">Deskripsi Perbaikan</label>
+                  <textarea id="ac-deskripsi-perbaikan" class="form-textarea" rows="3" placeholder="Jelaskan langkah-langkah perbaikan yang dilakukan..." required></textarea>
+                  <span class="field-error" id="err-ac-deskripsi-perbaikan"></span>
+                </div>
+                <div class="form-group">
+                  <label class="form-label required">Upload Dokumentasi Setelah Perbaikan</label>
+                  <div class="upload-area" id="ac-fix-upload-area">
+                    <input type="file" id="ac-foto-fix" accept="image/*" class="upload-input" required />
+                    <div class="upload-placeholder">
+                      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                      <p>Klik atau seret foto kondisi setelah perbaikan</p>
+                      <span>PNG, JPG, JPEG — Maks. 5MB</span>
+                    </div>
+                    <div class="upload-preview" id="ac-fix-preview" style="display:none">
+                      <img id="ac-fix-img" src="" alt="Preview Setelah Perbaikan" />
+                      <button type="button" class="upload-remove" id="ac-fix-remove">✕ Hapus</button>
+                    </div>
+                  </div>
+                  <span class="field-error" id="err-ac-foto-fix"></span>
+                </div>
+                <div class="form-group">
+                  <label class="form-label required">Apakah gangguan kembali terjadi setelah 15 menit pengamatan?</label>
+                  <div class="radio-group">
+                    <label class="radio-card">
+                      <input type="radio" name="ac-kambuh" value="Ya" id="ac-kambuh-ya" />
+                      <span class="radio-box">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                      </span>
+                      <span class="radio-label">Ya, gangguan kembali</span>
+                    </label>
+                    <label class="radio-card">
+                      <input type="radio" name="ac-kambuh" value="Tidak" id="ac-kambuh-tidak" />
+                      <span class="radio-box">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                      </span>
+                      <span class="radio-label">Tidak, perbaikan berhasil</span>
+                    </label>
+                  </div>
+                  <span class="field-error" id="err-ac-kambuh"></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Submit -->
+            <div class="form-actions">
+              <button type="button" class="btn-secondary" id="ac-reset-btn">Reset Form</button>
+              <button type="submit" class="btn-primary" id="ac-submit-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2L15 22l-4-9-9-4 20-7z"/></svg>
+                <span class="btn-text">Kirim Laporan Maintenance</span>
+                <span class="btn-loader" style="display:none"><span class="spinner"></span></span>
+              </button>
+            </div>
+
+          </form>
+        </section>
+
+      </div><!-- end content-body -->
+    </main>
+  </div><!-- end page-app -->
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!--  SUCCESS NOTIFICATION                           -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <div class="notification" id="notification">
+    <div class="notif-icon">
+      <svg id="notif-icon-success" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+      <svg id="notif-icon-error" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="display:none"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </div>
+    <div class="notif-body">
+      <p class="notif-title" id="notif-title">Data Berhasil Dikirim!</p>
+      <p class="notif-desc" id="notif-desc">Data monitoring telah masuk ke Google Spreadsheet.</p>
+    </div>
+    <button class="notif-close" id="notif-close">✕</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
